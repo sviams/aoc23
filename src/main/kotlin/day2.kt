@@ -2,10 +2,7 @@ object day2 {
 
     data class DrawSet(val red: Int, val green: Int, val blue: Int)
     data class Game(val id: Int, val sets: List<DrawSet>) {
-        val maxRed: Int by lazy { sets.map { it.red }.max() }
-        val maxBlue: Int by lazy { sets.map { it.blue }.max() }
-        val maxGreen: Int by lazy { sets.map { it.green }.max() }
-        val power: Int by lazy { maxRed * maxBlue * maxGreen }
+        val power: Int by lazy { sets.maxOf { it.red } * sets.maxOf { it.blue } * sets.maxOf { it.green } }
         fun withinLimit(r: Int, b: Int, g: Int): Boolean = sets.all { set ->
             set.red <= r && set.blue <= b && set.green <= g
         }
