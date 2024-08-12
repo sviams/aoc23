@@ -1,11 +1,10 @@
 plugins {
-    kotlin("jvm") version "1.8.0"
-    application
+    kotlin("jvm") version "2.0.10"
 }
 
-group = "org.example"
+group = "com.jaendel"
 version = "1.0-SNAPSHOT"
-val kotestVersion = "5.8.0"
+val kotestVersion = "5.9.1"
 
 repositories {
     mavenCentral()
@@ -22,9 +21,5 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(11)
-}
-
-application {
-    mainClass.set("MainKt")
+    jvmToolchain(21)
 }

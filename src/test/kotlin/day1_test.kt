@@ -8,7 +8,7 @@ class day1_test: FunSpec({
         "a1b2c3d4e5f" to "15",
         "treb7uchet" to "77"
     ).forEach {
-        test("first and last digit in a is") {
+        test("first and last digit in ${it.first} is ${it.second}") {
             day1.firstAndLast(it.first) shouldBe it.second
         }
     }
